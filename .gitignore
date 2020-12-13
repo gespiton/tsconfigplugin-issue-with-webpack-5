@@ -178,6 +178,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,vscode,macos,windows
 
-build/
 package-lock.json
 .vscode
