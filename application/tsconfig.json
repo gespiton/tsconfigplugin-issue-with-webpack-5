@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "build",
+    "target": "es6",
+    "noUnusedLocals": true,
+    "paths": {
+      "fullscreen/*": ["../packages/fullscreen/src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+  ]
+}

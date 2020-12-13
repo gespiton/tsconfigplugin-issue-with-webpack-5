@@ -1,0 +1,20 @@
+{
+  "name": "webpack-tsconfig-plugin-issue",
+  "private": true,
+  "version": "20.4.30",
+  "scripts": {
+    "postinstall": "npm run bt",
+    "clean:cache": "node ./scripts/rimraf.js ./application/.tsc_cache ./application/node_modules/.cache ./application/.cache-loader ./packages/**/.tsc_cache ./app/**/.tsc_cache ./core/**/.tsc_cache",
+    "clean:node_modules": "node ./scripts/rimraf.js ./node_modules ./application/node_modules ./app/**/node_modules ./packages/**/node_modules",
+    "clean:build": "node ./scripts/rimraf.js ./application/build ./packages/**/build ./packages/**/build-es",
+    "clean:all": "npm run clean:build && lerna clean --yes && node ./scripts/rimraf.js ./node_modules --no-glob",
+    "build": "cd application && webpack -c config/webpack.config.prod.js",
+    "bt": "lerna bootstrap --hoist --no-ci -- --cache-min 9999999"
+  },
+  "devDependencies": {
+    "lerna": "3.4.3",
+    "rimraf": "2.6.2",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {}
+}
